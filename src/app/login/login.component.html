@@ -1,0 +1,30 @@
+<div class="login-container">
+  <div class="main-container">
+    <img src="https://keliaukimpatys.lt/wp-content/uploads/2018/12/antilopes_kanjonas_4.jpg" />
+    <div class="content-container">
+      <h3>Logo</h3>
+      <h1>Welcome</h1>
+      <p>Welcome to our platform! Login to access exclusive features and personalized content</p>
+      <div class="input-area" [class.expanded]="isSignUp">
+        @if(isSignUp) {
+          <input type="text" placeholder="username">
+          <input type="email" placeholder="enter@email.com">
+          <input type="phone" placeholder="phone number">
+        } @else {
+          <input type="email" placeholder="enter@email.com">
+          <input type="password" placeholder="password">
+        }
+      </div>
+      <button>{{ isSignUp ? 'Sign up' : 'Login' }}</button>
+      @if(isSignUp) {
+        <div class="sign-in-text">Already have an account?
+          <span (click)="signIn()">Sign in</span>
+        </div>
+      } @else {
+        <div class="sign-in-text">Don't have an account?
+          <span (click)="signUp()">Sign up</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>
